@@ -1,0 +1,17 @@
+[default]
+FileStorePath=c:\\tmp
+FileLogPath=c:\\tmp
+ConnectionType=initiator
+SenderCompID=FIXCLIENT
+TargetCompID=FIXSERVER
+SocketConnectHost=localhost
+StartTime=00:00:00
+EndTime=00:00:00
+HeartBtInt=30
+ReconnectInterval=5
+UseDataDictionary=Y
+DataDictionary=c:\\docs\\workspace\\fixclient\\src\\main\\resources\\FIX44.xml
+
+[session]
+BeginString=FIX.4.4
+SocketConnectPort=9878
