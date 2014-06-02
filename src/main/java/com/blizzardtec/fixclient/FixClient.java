@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.blizzardtec.fixclient;
 
@@ -82,7 +82,7 @@ public final class FixClient {
             Thread.sleep(SLEEP_TIME);
 
             sendMarketDataRequests(application);
-            
+
             System.out.println("press <enter> to quit");
 
             System.in.read();
@@ -92,7 +92,7 @@ public final class FixClient {
             Thread.sleep(SLEEP_TIME);
 
             initiator.stop();
-            
+
         } catch (FileNotFoundException fnf) {
             LOG.error(fnf.getMessage());
         } catch (ConfigError ce) {
@@ -171,7 +171,7 @@ public final class FixClient {
      */
     private void sendMarketDataRequests(
             final ClientApplication application) {
-        
+
         // send a bid market data request
         LOG.info("Sending Bid MarketDataRequest");
         application.sendMessage(

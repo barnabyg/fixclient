@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.blizzardtec.fixclient.depth;
 
@@ -18,7 +18,7 @@ public final class DepthManager
         extends HashMap<String, InstrumentDepth> {
 
     /**
-     * 
+     *
      */
     private static final long serialVersionUID = 4442926059155101544L;
 
@@ -39,7 +39,7 @@ public final class DepthManager
         if (priceDepth.getType() == OrderType.BID) {
             LOG.info("New Bid price depth "
                     + priceDepth.getLevel()
-                    + " data for " + symbol);            
+                    + " data for " + symbol);
         } else if (priceDepth.getType() == OrderType.OFFER) {
             LOG.info("New Offer price depth "
                     + priceDepth.getLevel()

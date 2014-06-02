@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.blizzardtec.fixclient.depth;
 
@@ -17,27 +17,27 @@ import com.blizzardtec.fixclient.OrderType;
 public final class DepthManagerTest {
 
     /**
-     * 
+     *
      */
     private static final int NEWSIZE2 = 200;
     /**
-     * 
+     *
      */
     private static final int NEWSIZE1 = 100;
     /**
-     * 
+     *
      */
     private static final double NEWPRICE2 = 8.88;
     /**
-     * 
+     *
      */
     private static final double NEWPRICE1 = 9.99;
     /**
-     * 
+     *
      */
     private static final int SIZE = 1000;
     /**
-     * 
+     *
      */
     private static final String SYMBOL = "EURUSD";
 

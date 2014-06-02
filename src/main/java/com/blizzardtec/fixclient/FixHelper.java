@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.blizzardtec.fixclient;
 
@@ -47,7 +47,7 @@ public final class FixHelper {
             if (session == null) {
                 throw new SessionNotFound(sessionID.toString());
             }
-            
+
             final DataDictionaryProvider dictProvider =
                                     session.getDataDictionaryProvider();
 
@@ -61,7 +61,7 @@ public final class FixHelper {
                     return;
                 }
             }
-            
+
             session.send(message);
         } catch (SessionNotFound e) {
             LOG.error(e.getMessage(), e);

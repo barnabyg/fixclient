@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.blizzardtec.fixclient;
 
@@ -29,7 +29,7 @@ import quickfix.fix44.MessageCracker;
 
 /**
  * @author Barnaby Golden
- * 
+ *
  */
 public final class ClientApplication
             extends MessageCracker implements Application {
@@ -57,9 +57,9 @@ public final class ClientApplication
 
     /**
      * Observable logon.
-     * 
+     *
      * @author Barnaby Golden
-     * 
+     *
      */
     private static class ObservableLogon extends Observable {
         /**
@@ -69,7 +69,7 @@ public final class ClientApplication
 
         /**
          * Logon.
-         * 
+         *
          * @param sessionID
          *            id
          */
@@ -82,7 +82,7 @@ public final class ClientApplication
 
         /**
          * Logoff.
-         * 
+         *
          * @param sessionID
          *            id
          */
@@ -104,7 +104,7 @@ public final class ClientApplication
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see quickfix.Application#fromAdmin(quickfix.Message, quickfix.SessionID)
      */
     @Override
@@ -117,7 +117,7 @@ public final class ClientApplication
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see quickfix.Application#fromApp(quickfix.Message, quickfix.SessionID)
      */
     @Override
@@ -192,7 +192,6 @@ public final class ClientApplication
 
                 manager.newDepthData(priceDepth);
             }
-            
         } catch (FieldNotFound e) {
             LOG.error(e.getMessage());
         }
@@ -274,7 +273,6 @@ public final class ClientApplication
                         + symbol.getObject() + " " + size + " at " + price);
 
             }
-            
         } catch (FieldNotFound e) {
             LOG.error(e.getMessage());
         }
@@ -282,7 +280,7 @@ public final class ClientApplication
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see quickfix.Application#onCreate(quickfix.SessionID)
      */
     @Override
@@ -292,7 +290,7 @@ public final class ClientApplication
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see quickfix.Application#onLogon(quickfix.SessionID)
      */
     @Override
@@ -303,7 +301,7 @@ public final class ClientApplication
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see quickfix.Application#onLogout(quickfix.SessionID)
      */
     @Override
@@ -313,7 +311,7 @@ public final class ClientApplication
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see quickfix.Application#toAdmin(quickfix.Message, quickfix.SessionID)
      */
     @Override
@@ -323,7 +321,7 @@ public final class ClientApplication
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see quickfix.Application#toApp(quickfix.Message, quickfix.SessionID)
      */
     @Override

@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.blizzardtec.fixclient.depth;
 
@@ -85,7 +85,7 @@ public final class InstrumentDepth {
         for (int i = (length - 1); i > (level - 1); i--) {
             depths[i] = depths[i - 1];
             if (depths[i] != null) {
-                depths[i].setLevel(i + 1);                
+                depths[i].setLevel(i + 1);
             }
         }
 
