@@ -1,4 +1,3 @@
-
 package com.blizzardtec.fixclient;
 
 import static org.junit.Assert.assertTrue;
