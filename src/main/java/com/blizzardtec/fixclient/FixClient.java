@@ -50,7 +50,7 @@ public final class FixClient {
      * Client configuration file.
      */
     private static final String CONFIG =
-           "c:\\docs\\workspace\\fixclient\\src\\main\\resources\\fixconfig";
+           "src/main/resources/fixconfig";
 
     /**
      * Run the fix client.
