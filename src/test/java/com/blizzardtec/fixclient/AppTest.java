@@ -1,6 +1,6 @@
 package com.blizzardtec.fixclient;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
@@ -14,6 +14,6 @@ public final class AppTest {
      */
     @Test
     public void testMain() {
-        assertTrue("", true);
+        assertEquals("dummy test - please ignore", 1, 1);
     }
 }

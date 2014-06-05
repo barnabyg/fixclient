@@ -4,12 +4,12 @@ package com.blizzardtec.fixclient;
  * Fix client main class.
  *
  */
-public final class App {
+public final class FixClientApp {
 
     /**
      * Utility class has private constructor.
      */
-    private App() {
+    private FixClientApp() {
         // private constructor
     }
 

@@ -155,9 +155,9 @@
         <version>${cobertura.version}</version>
         <configuration>
           <check>
+            <haltOnFailure>false</haltOnFailure>
             <branchRate>50</branchRate>
             <lineRate>50</lineRate>
-            <haltOnFailure>true</haltOnFailure>
             <totalBranchRate>50</totalBranchRate>
             <totalLineRate>50</totalLineRate>
             <packageLineRate>50</packageLineRate>

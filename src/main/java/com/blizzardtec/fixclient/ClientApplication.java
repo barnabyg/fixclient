@@ -31,6 +31,7 @@ import quickfix.fix44.MessageCracker;
  * @author Barnaby Golden
  *
  */
+@SuppressWarnings("PMD.UnnecessaryFullyQualifiedName")
 public final class ClientApplication
             extends MessageCracker implements Application {
 

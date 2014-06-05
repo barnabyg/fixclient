@@ -33,6 +33,7 @@ import org.slf4j.LoggerFactory;
  * @author Barnaby Golden
  *
  */
+@SuppressWarnings("PMD.UnnecessaryFullyQualifiedName")
 public final class FixClient {
 
     /**
@@ -132,13 +133,36 @@ public final class FixClient {
      */
     private Message buildMarketDataCancel(final char type) {
 
+        return buildMsg(
+           type,
+         SubscriptionRequestType.DISABLE_PREVIOUS_SNAPSHOT_PLUS_UPDATE_REQUEST);
+    }
+
+    /**
+     * Build the market data request message.
+     * @param type the message type (BID/OFFER)
+     * @return built message
+     */
+    private Message buildMarketDataRequest(final char type) {
+
+        return buildMsg(
+                type, SubscriptionRequestType.SNAPSHOT_PLUS_UPDATES);
+    }
+
+    /**
+     * Build message.
+     * @param type the type
+     * @param subType the sub type
+     * @return msg
+     */
+    private Message buildMsg(final char type, final char subType) {
+
         final Message msg = new MarketDataRequest();
         // 262* Unique MDID
         msg.setField(new MDReqID("EURUSD01"));
         // 263* Subscription request type
         msg.setField(
-          new SubscriptionRequestType(
-        SubscriptionRequestType.DISABLE_PREVIOUS_SNAPSHOT_PLUS_UPDATE_REQUEST));
+          new SubscriptionRequestType(subType));
         // 264* Market depth
         msg.setField(new MarketDepth(1));
 
@@ -157,6 +181,7 @@ public final class FixClient {
         // * Instrument MD request group
         msg.setField(new quickfix.field.NoRelatedSym('1'));
         final NoRelatedSym symGroup = new NoRelatedSym();
+        //symGroup.set(new Symbol("EURUSD"));
         symGroup.set(new Symbol("EUR/USD"));
         msg.addGroup(symGroup);
 
@@ -183,44 +208,6 @@ public final class FixClient {
         application.sendMessage(
                 application.getSessionId(),
                 buildMarketDataRequest(OrderType.OFFER));
-    }
-
-    /**
-     * Build the market data request message.
-     * @param type the message type (BID/OFFER)
-     * @return built message
-     */
-    private Message buildMarketDataRequest(final char type) {
-
-        final Message msg = new MarketDataRequest();
-        // 262* Unique MDID
-        msg.setField(new MDReqID("EURUSD01"));
-        // 263* Subscription request type
-        msg.setField(
-          new SubscriptionRequestType(
-               SubscriptionRequestType.SNAPSHOT_PLUS_UPDATES));
-        // 264* Market depth
-        msg.setField(new MarketDepth(1));
-
-        // * MD request group
-        msg.setField(new quickfix.field.NoMDEntryTypes('1'));
-        final NoMDEntryTypes entryGroup = new NoMDEntryTypes();
-
-        if (type == OrderType.OFFER) {
-            entryGroup.set(new quickfix.field.MDEntryType(MDEntryType.OFFER));
-        } else if (type == OrderType.BID) {
-            entryGroup.set(new quickfix.field.MDEntryType(MDEntryType.BID));
-        }
-
-        msg.addGroup(entryGroup);
-
-        // * Instrument MD request group
-        msg.setField(new quickfix.field.NoRelatedSym('1'));
-        final NoRelatedSym symGroup = new NoRelatedSym();
-        symGroup.set(new Symbol("EURUSD"));
-        msg.addGroup(symGroup);
-
-        return msg;
     }
 
     /**
