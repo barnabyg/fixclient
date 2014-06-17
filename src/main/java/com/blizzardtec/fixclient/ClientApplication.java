@@ -169,8 +169,8 @@ public final class ClientApplication
                 group.get(mdPosition);
 
                 final char type = mdEntryType.getObject();
-                final double price = mdEntryPx.getValue();
-                final int size = (int) mdEntrySize.getValue();
+                final double price = mdEntryPx.getValue().doubleValue();
+                final int size = mdEntrySize.getValue().intValueExact();
                 final int level = mdPosition.getValue();
 
                 String typeStr = "Bid";
@@ -242,8 +242,8 @@ public final class ClientApplication
                 group.get(mdPosition);
 
                 final char type = mdEntryType.getObject();
-                final double price = mdEntryPx.getValue();
-                final int size = (int) mdEntrySize.getValue();
+                final double price = mdEntryPx.getValue().doubleValue();
+                final int size = (int) mdEntrySize.getValue().intValueExact();
                 final int level = mdPosition.getValue();
 
                 final PriceDepth priceDepth = new PriceDepth();
